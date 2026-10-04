@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Danahi ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: #12080d;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.pantalla {
+    min-height: 100vh;
+    display: none;
+    padding: 35px 22px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.pantalla.activa {
+    display: flex;
+}
+
+.contenido {
+    width: 100%;
+    max-width: 500px;
+    animation: aparecer 1s ease;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.subtitulo {
+    font-size: 20px;
+    opacity: .85;
+}
+
+.boton {
+    border: none;
+    background: #d94f70;
+    color: white;
+    padding: 15px 28px;
+    border-radius: 30px;
+    font-size: 17px;
+    margin-top: 25px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(217,79,112,.4);
+}
+
+.boton:hover {
+    transform: scale(1.05);
+}
+
+.foto {
+    width: 100%;
+    max-width: 350px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 22px;
+    box-shadow: 0 10px 40px rgba(0,0,0,.5);
+    margin: 20px auto;
+}
+
+.tarjeta {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 22px;
+    padding: 25px;
+    margin: 18px 0;
+    backdrop-filter: blur(10px);
+}
+
+.frase {
+    font-size: 23px;
+    font-style: italic;
+}
+
+.corazon {
+    font-size: 70px;
+    animation: latir 1.4s infinite;
+}
+
+.final {
+    font-size: 25px;
+    line-height: 1.6;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes latir {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.corazones {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.corazones span {
+    position: absolute;
+    bottom: -30px;
+    animation: subir 8s linear infinite;
+    opacity: .5;
+}
+
+.corazones span:nth-child(1) { left: 10%; animation-delay: 0s; }
+.corazones span:nth-child(2) { left: 30%; animation-delay: 2s; }
+.corazones span:nth-child(3) { left: 50%; animation-delay: 4s; }
+.corazones span:nth-child(4) { left: 70%; animation-delay: 1s; }
+.corazones span:nth-child(5) { left: 90%; animation-delay: 3s; }
+
+@keyframes subir {
+    from {
+        transform: translateY(0) rotate(0deg);
+    }
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+    }
+}
+
+.contenido {
+    position: relative;
+    z-index: 2;
+}
+</style>
+</head>
+
+<body>
+
+<div class="corazones">
+    <span>❤️</span>
+    <span>💕</span>
+    <span>❤️</span>
+    <span>💗</span>
+    <span>❤️</span>
+</div>
+
+<!-- PANTALLA 1 -->
+<section class="pantalla activa" id="pantalla1">
+    <div class="contenido">
+
+        <div class="corazon">❤️</div>
+
+        <h1>Para Danahi</h1>
+
+        <p class="subtitulo">
+            Tengo algo preparado para ti...
+        </p>
+
+        <p>
+            Pero tendrás que descubrirlo poco a poco.
+        </p>
+
+        <button class="boton" onclick="siguiente(2)">
+            Empezar ❤️
+        </button>
+
+    </div>
+</section>
+
+
+<!-- PANTALLA 2 -->
+<section class="pantalla" id="pantalla2">
+    <div class="contenido">
+
+        <h2>3 meses contigo</h2>
+
+        <p>
+            Puede que para algunas personas tres meses
+            parezcan poco...
+        </p>
+
+        <p>
+            Pero para mí han sido suficientes para darme
+            cuenta de lo especial que eres.
+        </p>
+
+        <div class="tarjeta">
+            <p class="frase">
+                "Gracias por hacer que estos tres meses
+                sean tan bonitos."
+            </p>
+        </div>
+
+        <button class="boton" onclick="siguiente(3)">
+            Continuar 💕
+        </button>
+
+    </div>
+</section>
+
+
+<!-- PANTALLA 3 -->
+<section class="pantalla" id="pantalla3">
+    <div class="contenido">
+
+        <h2>Un pequeño recuerdo...</h2>
+
+        <!-- AQUÍ PONDREMOS TU PRIMERA FOTO -->
+        <img src="foto1.jpg" class="foto">
+
+        <p>
+            Esta es una de tantas cosas que quiero
+            guardar para siempre.
+        </p>
+
+        <button class="boton" onclick="siguiente(4)">
+            Hay más ❤️
+        </button>
+
+    </div>
+</section>
+
+
+<!-- PANTALLA 4 -->
+<section class="pantalla" id="pantalla4">
+    <div class="contenido">
+
+        <h2>Lo que siento por ti</h2>
+
+        <div class="tarjeta">
+            <p>
+                Me gusta tu forma de ser.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <p>
+                Me gusta cómo haces especiales
+                hasta los momentos más simples.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <p>
+                Y sobre todo...
+                me gusta tenerte en mi vida.
+            </p>
+        </div>
+
+        <button class="boton" onclick="siguiente(5)">
+            Sigue leyendo 💌
+        </button>
+
+    </div>
+</section>
+
+
+<!-- PANTALLA 5 -->
+<section class="pantalla" id="pantalla5">
+    <div class="contenido">
+
+        <h2>Para ti, Danahi</h2>
+
+        <div class="tarjeta">
+
+            <p>
+                No sé exactamente qué nos espera
+                en el futuro...
+            </p>
+
+            <p>
+                pero sí sé que quiero seguir creando
+                recuerdos contigo.
+            </p>
+
+            <p>
+                Quiero más conversaciones,
+                más risas, más fotografías,
+                más momentos juntos.
+            </p>
+
+            <p>
+                Y espero que estos tres meses
+                sean solamente el comienzo.
+            </p>
+
+        </div>
+
+        <button class="boton" onclick="siguiente(6)">
+            Una última cosa... ❤️
+        </button>
+
+    </div>
+</section>
+
+
+<!-- PANTALLA 6 -->
+<section class="pantalla" id="pantalla6">
+    <div class="contenido">
+
+        <div class="corazon">❤️</div>
+
+        <h2>Esto todavía no termina...</h2>
+
+        <p class="final">
+            Porque el mejor recuerdo
+            todavía está por escribirse.
+        </p>
+
+        <p>
+            Feliz 3 meses, Danahi.
+        </p>
+
+        <p>
+            Te quiero ❤️
+        </p>
+
+        <!-- AQUÍ DESPUÉS PONDREMOS LA SORPRESA FINAL -->
+
+    </div>
+</section>
+
+
+<!-- MÚSICA -->
+<audio id="musica" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+
+<script>
+
+function siguiente(numero) {
+
+    document.querySelectorAll(".pantalla").forEach(function(pantalla) {
+        pantalla.classList.remove("activa");
+    });
+
+    document.getElementById("pantalla" + numero)
+        .classList.add("activa");
+
+    iniciarMusica();
+}
+
+function iniciarMusica() {
+
+    const musica = document.getElementById("musica");
+
+    musica.play().catch(function() {
+        // El navegador puede bloquear el audio
+        // hasta que la persona toque la pantalla.
+    });
+}
+
+</script>
+
+</body>
+</html>
